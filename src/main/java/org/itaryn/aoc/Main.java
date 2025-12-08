@@ -5,19 +5,20 @@ import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
 import picocli.CommandLine;
 
-import java.io.IOException;
-
 @TopCommand
 @CommandLine.Command(name = "all", description = "Run all exercises")
 public class Main implements Runnable {
-    @Inject
-    Instance<IExercise> days;
+    private final Instance<IExercise> days;
+    private final ExerciseHelper exerciseHelper;
 
     @Inject
-    ExerciseHelper exerciseHelper;
+    public Main(Instance<IExercise> days, ExerciseHelper exerciseHelper) {
+        this.days = days;
+        this.exerciseHelper = exerciseHelper;
+    }
 
     @Override
     public void run() {
-        days.forEach(exercise -> exerciseHelper.runExercise(exercise));
+        days.forEach(exerciseHelper::runExercise);
     }
 }
