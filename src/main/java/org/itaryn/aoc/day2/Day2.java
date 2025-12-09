@@ -2,6 +2,7 @@ package org.itaryn.aoc.day2;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.itaryn.aoc.IExercise;
+import picocli.CommandLine;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,6 +13,7 @@ import java.util.function.LongPredicate;
 import java.util.regex.Pattern;
 
 @ApplicationScoped
+@CommandLine.Command(name = "day2", description = "Run Day 2 Exercise")
 public class Day2 implements IExercise {
     protected static boolean isSimpleValidId(long productId) {
         boolean isValid = true;
