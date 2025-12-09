@@ -19,6 +19,6 @@ public class Main implements Runnable {
 
     @Override
     public void run() {
-        days.forEach(exerciseHelper::runExercise);
+        days.forEach(exercice -> Thread.startVirtualThread(() -> exerciseHelper.runExercise(exercice)));
     }
 }
