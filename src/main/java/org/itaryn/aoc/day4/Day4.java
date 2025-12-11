@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
-@CommandLine.Command(name = "day4", description = "Run Day 3 Exercise")
+@CommandLine.Command(name = "day4", description = "Run Day 4 Exercise")
 public class Day4 implements IExercise {
     @Override
     public int getDay() {
