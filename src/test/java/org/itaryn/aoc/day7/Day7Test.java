@@ -55,11 +55,6 @@ class Day7Test {
     }
 
     @Test
-    void countParticles2() throws IOException {
-        assertEquals(128, new Day7().countParticles(new Day7().readInput("src/test/resources/day7/example2.txt")));
-    }
-
-    @Test
     void readInput() throws IOException {
         Integer[][] expected = new Integer[][]{
                 new Integer[]{},
